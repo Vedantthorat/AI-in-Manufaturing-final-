@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry Form</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    /* Container */
+    .container {
+      width: 50%;
+      max-width: 900px;
+      margin: 3rem auto;
+      background-color: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2196F3;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Form Elements */
+    label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #555;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    /* Button */
+    button {
+      padding: 1rem 2rem;
+      background-color: #2196F3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #1976D2;
+    }
+
+    /* Report Section */
+    .report {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      display: none;
+    }
+
+    .report h3 {
+      color: #2196F3;
+      margin-bottom: 1rem;
+    }
+
+    .report ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .report li {
+      margin: 0.5rem 0;
+      color: #555;
+    }
+
+    .report ul li strong {
+      color: #333;
+    }
+
+    /* Success Message */
+    .success-message {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        padding: 1rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Industry Enquiry Form</h2>
+    <form id="enquiryForm">
+      <!-- Industry Type -->
+      <label for="industry">Type of Industry:</label>
+      <select id="industry" required>
+        <option value="">Select Industry</option>
+        <option value="pharmaceutical">Pharmaceutical</option>
+        <option value="food_beverages">Food & Beverages</option>
+        <option value="electronics">Electronics</option>
+        <option value="automobile">Automobile</option>
+      </select>
+
+      <!-- Location -->
+      <label for="state">Location (State in India):</label>
+      <select id="state" required>
+        <option value="">Select State</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="delhi">Delhi</option>
+        <option value="gujarat">Gujarat</option>
+      </select>
+
+      <!-- Number of Workers -->
+      <label for="workers">Number of Workers:</label>
+      <input type="number" id="workers" min="1" required />
+
+      <!-- Taxes -->
+      <label for="taxes">Tax Rate (Percentage):</label>
+      <input type="number" id="taxes" min="0" max="100" required />
+
+      <!-- Comments -->
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" rows="4" placeholder="Provide any additional details..." required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Enquiry</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message" style="display: none;">
+      <p>Your enquiry has been submitted successfully!</p>
+    </div>
+
+    <!-- Report Display Area -->
+    <div class="report" id="report"></div>
+  </div>
+
+  <script>
+    // Handle form submission
+    document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the form from refreshing the page
+
+      // Get form inputs
+      const industry = document.getElementById("industry").value;
+      const state = document.getElementById("state").value;
+      const workers = document.getElementById("workers").value;
+      const taxes = document.getElementById("taxes").value;
+      const comments = document.getElementById("comments").value;
+
+      // Check if all fields are filled
+      if (!industry || !state || !workers || !taxes || !comments) {
+        alert("Please fill out all fields before submitting.");
+        return;
+      }
+
+      // Display the success message
+      const successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block";
+
+      // Clear the form
+      document.getElementById("enquiryForm").reset();
+
+      // Generate a basic report based on inputs
+      const reportContent = `
+        <h3>Enquiry Report</h3>
+        <p><strong>Industry Type:</strong> ${industry}</p>
+        <p><strong>Location (State):</strong> ${state}</p>
+        <p><strong>Number of Workers:</strong> ${workers}</p>
+        <p><strong>Tax Rate:</strong> ${taxes}%</p>
+        <p><strong>Additional Comments:</strong> ${comments}</p>
+        <h4>Analysis:</h4>
+        <ul>
+          <li><strong>Industry Type:</strong> AI solutions are widely adopted in the ${industry} sector.</li>
+          <li><strong>Location:</strong> The selected state (${state}) has growing infrastructure for industries like ${industry}.</li>
+          <li><strong>Workers:</strong> ${workers} workers may benefit from automation and AI-enhanced workflows.</li>
+          <li><strong>Tax Rate:</strong> A tax rate of ${taxes}% is moderate for most industries in India.</li>
+        </ul>
+      `;
+
+      // Show the report section
+      const reportDiv = document.getElementById("report");
+      reportDiv.innerHTML = reportContent;
+      reportDiv.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>

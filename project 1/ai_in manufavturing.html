@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Manufacturing - Transforming Industries</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #fff;
+    }
+
+    /* Header */
+    .header {
+      background-color: #1e293b;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      color: #facc15;
+    }
+
+    .auth-buttons a {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #facc15;
+      color: #1e293b;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #eab308;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #111827;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #f3f4f6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    /* Main */
+    .main {
+      padding: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #1f2937;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background-color: #334155;
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      color: #fef9c3;
+    }
+
+    .card p {
+      color: #d1d5db;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111827;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>AI in Manufacturing</h1>
+    <div class="auth-buttons">
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </div>
+
+  <nav>
+    <a href="automobile.html">Content</a>
+    <a href="pharmaceutical.html">Pharmaceutical</a>
+    <a href="food.html">Food & Beverages</a>
+    <a href="electronics.html">Electronics</a>
+    <a href="form.html">Feedback</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="main">
+    <div class="card-container">
+      <div class="card" onclick="location.href='automobile.html'">
+        <i class="fas fa-car"></i>
+        <h3>Automobile Sector</h3>
+        <p>Explore trends and AI integration in automotive manufacturing.</p>
+      </div>
+      <div class="card" onclick="location.href='pharmaceutical.html'">
+        <i class="fas fa-pills"></i>
+        <h3>Pharmaceutical</h3>
+        <p>AI in drug development and process optimization.</p>
+      </div>
+      <div class="card" onclick="location.href='food.html'">
+        <i class="fas fa-utensils"></i>
+        <h3>Food & Beverages</h3>
+        <p>Enhance food safety, quality, and production with AI.</p>
+      </div>
+      <div class="card" onclick="location.href='electronics.html'">
+        <i class="fas fa-microchip"></i>
+        <h3>Electronics</h3>
+        <p>Precision electronics manufacturing powered by AI.</p>
+      </div>
+      <div class="card" onclick="location.href='form.html'">
+        <i class="fas fa-comment-dots"></i>
+        <h3>Feedback</h3>
+        <p>Share your insights and help us improve.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Contact us: <a href="contact.html" style="color: #facc15; text-decoration: underline;">Click here</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Manufacturing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: linear-gradient(to right, #f0f4ff, #e6f7ff);
+    }
+
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(to bottom, #004080, #0073e6);
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #ffdd57;
+      transform: translateX(10px);
+    }
+
+    .sidebar a i {
+      margin-right: 10px;
+    }
+
+    .main {
+      margin-left: 270px;
+      padding: 30px;
+      width: calc(100% - 270px);
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #0a3d62;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #34495e;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0073e6;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 15px;
+      background: #0073e6;
+      color: white;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ffff66;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>AI in Manufacturing</h2>
+    <a href="#"><i>💊</i> Pharmaceutical</a>
+    <a href="#"><i>🍔</i> Food & Beverages</a>
+    <a href="#"><i>💻</i> Electronics</a>
+    <a href="#"><i>🚗</i> Automobile</a>
+    <a href="#"><i>📄</i> Enquiry Form</a>
+    <a href="#"><i>📞</i> Contact Us</a>
+  </div>
+
+  <div class="main">
+    <h1>Welcome to AI in Manufacturing</h1>
+    <p class="subtitle">Discover how Artificial Intelligence is transforming industries like Pharmaceuticals, Electronics, Automobiles, and Food & Beverages.</p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/pill.png" alt="Pharmaceutical">
+        <a href="#">Pharmaceutical</a>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/burger.png" alt="Food & Beverages">
+        <a href="#">Food & Beverages</a>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/laptop.png" alt="Electronics">
+        <a href="#">Electronics</a>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/car--v1.png" alt="Automobile">
+        <a href="#">Automobile</a>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/document.png" alt="Enquiry Form">
+        <a href="#">Enquiry Form</a>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 AI in Manufacturing | <a href="#">Contact Us</a>
+    </footer>
+  </div>
+</body>
+
+</html>
